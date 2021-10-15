@@ -5,7 +5,9 @@ const { clientId, guildId, token } = require('./config.json');
 
 const commands = [
 
-    new SlashCommandBuilder().setName('ban').setDescription('Ban the user'),
+    new SlashCommandBuilder().setName('ban').setDescription('Ban the user	[TEST SERVER ONLY]'),
+
+	new SlashCommandBuilder().setName('emojitest').setDescription('A test	[TEST SERVER ONLY]'),
 	
 ]
 	.map(command => command.toJSON());
