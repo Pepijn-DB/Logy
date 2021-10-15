@@ -18,8 +18,9 @@ client.on('interactionCreate', async interaction => {
 
 	if (commandName === 'test') {
 		await interaction.reply('Test complete!');
+
 	} else if (commandName === 'ping') {
-		await interaction.reply(`Websocket heartbeat: ${client.ws.ping}ms.`);
+		await interaction.reply({ content: `Websocket heartbeat: ${client.ws.ping}ms.`, ephemeral: true });
 
 	}
 });
