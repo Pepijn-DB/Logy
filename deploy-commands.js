@@ -4,12 +4,9 @@ const { Routes } = require('discord-api-types/v9');
 const { clientId, guildId, token } = require('./config.json');
 
 const commands = [
-    
-    new SlashCommandBuilder().setName('test').setDescription('This is a command to test if the bot works!'),
-
-	new SlashCommandBuilder().setName('ping').setDescription('Gets the bot ping'),
 
     new SlashCommandBuilder().setName('ban').setDescription('Ban the user'),
+	
 ]
 	.map(command => command.toJSON());
 
