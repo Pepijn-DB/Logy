@@ -17,7 +17,11 @@ client.on('interactionCreate', async interaction => {
 	const { commandName } = interaction;
 
 	if (commandName === 'test') {
-		await interaction.reply({ content: 'Test complete!', ephemeral: true});
+		await interaction.reply('Test complete!');
+		const embed = new MessageEmbed()
+		.setColor('#0099ff')
+		.setTitle('A test')
+		.setDescription('69');
 		
 
 	} else if (commandName === 'ping') {
