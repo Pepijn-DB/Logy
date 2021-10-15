@@ -1,6 +1,7 @@
 // Require the necessary discord.js classes
 const { Client, Intents } = require('discord.js');
 const { token, guildId, clientId, guild  } = require('./config.json');
+const { tname, treason } = require('./deploy-commands.js');
 const { MessageActionRow, MessageEmbed, MessageSelectMenu } = require('discord.js');
 
 
@@ -15,18 +16,9 @@ client.once('ready', () => {
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
 
-	const { commandName } = interaction;
-	const row = new MessageActionRow()
-	.addComponents(
-		// ...
-	);
 	if (commandName === 'test') {
 		await interaction.reply('Test complete!');
-		const embed = new MessageEmbed()
-		.setColor('#0099ff')
-		.setTitle('A test')
-		.setDescription('69');
-		
+
 
 	} else if (commandName === 'ping') {
 		await interaction.reply({ content: `Websocket heartbeat: ${client.ws.ping}ms.`, ephemeral: true });
@@ -34,6 +26,17 @@ client.on('interactionCreate', async interaction => {
 	} else if (commandName === 'emojitest') {
 		const message = await interaction.reply({ content: 'Emoji test', fetchReply: true });
 		message.react('872202924296667178');
+	
+
+	} else if (commandName === 'threadcreate') {
+		const message = await interaction.reply({ content: 'Thread created', fetchReply: true });
+		const thread = await channel.threads.create({
+			name: tname,
+			autoArchiveDuration: 60,
+			reason: treason,
+		});
+		
+		console.log(`Created thread: ${thread.name}`);
 
 
 	}
