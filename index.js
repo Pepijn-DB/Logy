@@ -17,7 +17,7 @@ client.on('interactionCreate', async interaction => {
 	const { commandName } = interaction;
 
 	if (commandName === 'test') {
-		await interaction.reply('Test complete!');
+		await interaction.reply({ content: 'Testing Completed', ephemeral: true });
 		
 
 	} else if (commandName === 'ping') {
