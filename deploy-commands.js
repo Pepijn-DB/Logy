@@ -15,11 +15,11 @@ const commands = [
 	.setName('threadcreate')
 	.setDescription('Replies with your input!')
 	.addStringOption(tname =>
-		tname.setName('ThreadName')
+		tname.setName('threadname')
 			.setDescription('A name for the thread')
 			.setRequired(true))
 	.addStringOption(treason =>
-		treason.setName('ThreadReason')
+		treason.setName('threadreason')
 			.setDescription('A reason for the thread')
 			.setRequired(true))
 			
