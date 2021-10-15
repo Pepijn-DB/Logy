@@ -1,6 +1,7 @@
 // Require the necessary discord.js classes
 const { Client, Intents } = require('discord.js');
 const { token, guildId, clientId, guild  } = require('./config.json');
+const { MessageActionRow, MessageEmbed, MessageSelectMenu } = require('discord.js');
 
 
 // Create a new client instance
@@ -15,7 +16,10 @@ client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
 
 	const { commandName } = interaction;
-
+	const row = new MessageActionRow()
+	.addComponents(
+		// ...
+	);
 	if (commandName === 'test') {
 		await interaction.reply('Test complete!');
 		const embed = new MessageEmbed()
